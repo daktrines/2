@@ -1,0 +1,50 @@
+﻿<Window x:Class="_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2"
+        mc:Ignorable="d"
+        Title="2" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF66F1FF" Offset="0.865"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Menu VerticalAlignment="Top" Height="17" Background="#FF5CA7AE">
+            <MenuItem Header="Массив" Width="80">
+                <MenuItem Header="Открыть" Click="Openmas_Click" />
+                <MenuItem Header="Сохранить" Click="Savemas_Click" />
+                <Separator ></Separator>
+                <MenuItem Header="Заполнить" Click="Заполнить_Click"/>
+                <MenuItem Header="Расчитать" Click="Рассчитать_Click"/>
+                <MenuItem Header="Очистить" Click="ОчиститьМассив_Click"/>
+            </MenuItem>
+            <Separator Width="584"></Separator>
+            <MenuItem Header="Выход" Click="Exit_Click"/>
+            <MenuItem Header="Справка" Click="Info_Click"/>
+
+        </Menu>
+        <DataGrid x:Name="masData" CellEditEnding="МассивDataGrid_CellEditEnding" CanUserAddRows="False" HorizontalAlignment="Left" Height="136" Margin="10,39,0,0" VerticalAlignment="Top" Width="772">
+            <DataGrid.Background>
+                <ImageBrush/>
+            </DataGrid.Background>
+        </DataGrid>
+        <GroupBox x:Name="masInput" Header="Настройка массива" Margin="10,0,0,10" HorizontalAlignment="Left" Width="358" Height="201" VerticalAlignment="Bottom">
+            <Grid Margin="0,10,0,0">
+                <TextBox x:Name="kolKolonka"  MaxLines="1" Margin="10,22,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"></TextBox>
+                <Label Content="- количество колонок" Margin="138,22,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="198"></Label>
+                <Button Content="Заполнить" ToolTip="Создать и заполнить одномерный массив" Click="Заполнить_Click" Margin="10,106,0,0" HorizontalAlignment="Left" Width="326" Height="52" VerticalAlignment="Top" Background="#FF52C1CC"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="massiveRezult" Header="Решение массива" Margin="373,0,0,10" HorizontalAlignment="Left" Width="409" Height="201" VerticalAlignment="Bottom">
+            <Grid>
+                <TextBox x:Name="rez1" Text="" MaxLines="1" IsReadOnly="True" Margin="10,10,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="377"/>
+                <Button Content="Рассчитать" Click="Рассчитать_Click" ToolTip="Найти разность всех элементов массива" Margin="10,60,0,0" HorizontalAlignment="Left" Width="377" Height="53" VerticalAlignment="Top" Background="#FF52C1CC"/>
+                <Button Content="Очистить массив" Click="ОчиститьМассив_Click" ToolTip="Очистить массив" HorizontalAlignment="Left" Width="377" Height="50" VerticalAlignment="Top" Margin="10,118,0,0" Background="#FF52C1CC"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
