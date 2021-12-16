@@ -61,19 +61,25 @@ namespace _2
         private void Заполнить_Click(object sender, RoutedEventArgs e)
         {
             
-            //Проверка поля на корректность введенных данных
-            if (Int32.TryParse(kolKolonka.Text, out int count) && count > 0)
+            try
             {
+                int count = Convert.ToInt32(kolKolonka.Text);
                 Class1.Заполнить(count, out mas);
-                
+
                 //Выводим массив на форму
                 masData.ItemsSource = VisualArray.ToDataTable(mas).DefaultView;
 
                 //очищаем результат
                 rez1.Clear();
             }
-            else MessageBox.Show("Неверные данные!", "Ошибка");
+            catch
+            {
+                MessageBox.Show("Неверные данные!", "Ошибка", MessageBoxButton.OK,
+                  MessageBoxImage.Error);
+                kolKolonka.Focus();
+            }
         }
+
         //Расчет задания для массива
         private void Рассчитать_Click(object sender, RoutedEventArgs e)
         {
@@ -92,13 +98,16 @@ namespace _2
         //Очищение массива
         private void ОчиститьМассив_Click(object sender, RoutedEventArgs e)
         {
-            Class1.ОчиститьМассив(mas);
-
-            //Очищаем результат массива
+            //Очищаем остальные текстбоксы
             rez1.Clear();
-           
-            //Выводим массив на форму
-            masData.ItemsSource = VisualArray.ToDataTable(mas).DefaultView;
+            kolKolonka.Clear();
+
+            if (mas != null && mas.Length != 0)
+            {
+                masData.ItemsSource = null;
+            }
+            else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку \"Заполнить", "Ошибка", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
         }
         //Сохранение массива
         private void Savemas_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2"
         mc:Ignorable="d"
-        Title="2" Height="450" Width="800">
+        Title="2" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
@@ -43,7 +43,7 @@
             <Grid>
                 <TextBox x:Name="rez1" Text="" MaxLines="1" IsReadOnly="True" Margin="10,10,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="377"/>
                 <Button Content="Рассчитать" Click="Рассчитать_Click" ToolTip="Найти разность всех элементов массива" Margin="10,60,0,0" HorizontalAlignment="Left" Width="377" Height="53" VerticalAlignment="Top" Background="#FF52C1CC"/>
-                <Button Content="Очистить массив" Click="ОчиститьМассив_Click" ToolTip="Очистить массив" HorizontalAlignment="Left" Width="377" Height="50" VerticalAlignment="Top" Margin="10,118,0,0" Background="#FF52C1CC"/>
+                <Button Content="Очистить" Click="ОчиститьМассив_Click" ToolTip="Очистить массив" HorizontalAlignment="Left" Width="377" Height="50" VerticalAlignment="Top" Margin="10,118,0,0" Background="#FF52C1CC"/>
             </Grid>
         </GroupBox>
     </Grid>

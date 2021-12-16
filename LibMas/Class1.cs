@@ -32,17 +32,6 @@ namespace LibMas
         }
 
 
-        //Очищение массива
-        public static void ОчиститьМассив(int[] mas)
-        {
-            //Заполняем массив нулями
-            for (int i = 0; i < mas.Length; i++)
-            {
-                mas[i] = 0;
-            }
-
-        }
-
 
         //Сохранение массива
         public static void Savemas(int[] mas)
