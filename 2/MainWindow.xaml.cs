@@ -54,7 +54,8 @@ namespace _2
             //Заносим  отредоктированое значение в соответствующую ячейку массива
             if (Int32.TryParse(((TextBox)e.EditingElement).Text, out mas[columnIndex]))
             { }
-            else MessageBox.Show("Неверные данные!", "Ошибка");
+            else MessageBox.Show("Неверные данные!", "Ошибка", MessageBoxButton.OK,
+                  MessageBoxImage.Error);
         }
 
         //Заполнение массива
